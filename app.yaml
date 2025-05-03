@@ -1,0 +1,11 @@
+runtime: python39  # or any runtime, it's required but unused for static
+entrypoint: serve public/index.html
+
+handlers:
+  - url: /(.+)
+    static_files: public/\1
+    upload: public/(.+)
+
+  - url: /
+    static_files: public/index.html
+    upload: public/index.html
